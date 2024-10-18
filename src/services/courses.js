@@ -6,7 +6,6 @@ export const coursesApi = createApi({
   baseQuery: fetchBaseQuery({ 
     baseUrl: 'http://localhost:8090/',
     prepareHeaders:(headers)=>{
-      console.log("headers",headers)
       headers.set("authorization",window.localStorage.getItem('token'))
       return headers
     }
@@ -33,7 +32,6 @@ export const coursesApi = createApi({
 
     courseupdating: builder.mutation({
       query:(course)=>{
-        console.log("coursedet",course)
         return {
           url: `/updatecourse`,
           method: 'PUT',

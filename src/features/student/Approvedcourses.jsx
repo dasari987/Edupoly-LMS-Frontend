@@ -6,10 +6,8 @@ import { useNavigate } from 'react-router-dom'
 function Approvedcourses() {
   var {isLoading,data} = useGetUserApprovedCoursesQuery()
   var navigate = useNavigate()
-  console.log(data)
 
   function startcourse(course) {
-     console.log(course)
      navigate('/coursestarted',{state:course})
   }
 

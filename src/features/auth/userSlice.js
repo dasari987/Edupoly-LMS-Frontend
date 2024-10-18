@@ -8,8 +8,6 @@ export const userSlice = createSlice({
     initialState,
     reducers:{
         setLoginStatus:(state,action)=>{
-            console.log("actionnnn",action)
-            console.log("state",state)
             state.loginStatus=true
             state.role = action.payload.role
         },

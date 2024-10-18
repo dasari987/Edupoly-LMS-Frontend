@@ -7,7 +7,6 @@ function Coursedetails() {
    var [coudata, setCoudata] = useState(state)
    var {loginStatus,role} = useSelector(state=>state.user)
    var navigate = useNavigate()
-   console.log(loginStatus,role)
 
    function purchasecoursee() {
     navigate(`/purchasecourse/${coudata['_id']}`,{state:coudata})
@@ -30,7 +29,6 @@ function Coursedetails() {
                             coudata.videos.map((e,i)=>{
                               return <div className='border border-dark p-3 mb-1 m-2'>
                                       <div >{e.videotitle}</div>
-                                      {/* <a href={e.videolink} target="blank" className={(window.localStorage.getItem("token"))?'d-block':'d-none'}>Video Link</a> */}
                               </div>
                             })
                         }

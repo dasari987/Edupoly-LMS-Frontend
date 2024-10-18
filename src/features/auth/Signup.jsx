@@ -22,7 +22,6 @@ function Signup() {
        }
     }
 
-  // const SignupForm = () => {
     const formik = useFormik({
       initialValues: {
         username: '',

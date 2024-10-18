@@ -4,19 +4,15 @@ import { useUserPurchasedCoursesMutation } from '../../services/usercourses'
 
 function Purchasecourse() {
    var {state} = useLocation()
-   console.log("stattttt",state)
    var navigate = useNavigate()
    var params = useParams()
-   console.log("params",params.cid)
    var [purchasecourseFn] = useUserPurchasedCoursesMutation();
 
    function formsubmit(e){
     e.preventDefault()
-    console.log("cou",state)
 
        purchasecourseFn({course:state,cid:params.cid})
        .then((res)=>{
-        console.log(res)
            navigate('/purchasedcourses')
        })
        .catch((err)=>{

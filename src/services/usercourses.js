@@ -23,7 +23,6 @@ export const usercoursesApi = createApi({
 
     userPurchasedCourses:builder.mutation({
         query:({course,cid})=>{
-          console.log("cccccccc",cid)
             return {
                 url:`/purchasecourse/${cid}`,
                 method:'POST',
@@ -36,12 +35,8 @@ export const usercoursesApi = createApi({
        query: () => '/approvalpending'
     }),
 
-
-
-
     updateUserCourse:builder.mutation({
       query:({user,course})=>{
-        // console.log("cccccccc")
           return {
               url:`/approvecourse/${user.uid}/${course.cid}`,
               method:'PUT',
@@ -54,16 +49,6 @@ export const usercoursesApi = createApi({
        query:()=> '/adminapprovedcourses'
     })
 
-
-    // updateLoan:builder.mutation({
-    //   query:(loan)=>{
-    //     return {
-    //         url: `/loans/${loan.id}`,
-    //         method:"PUT",
-    //         body:loan,
-    //     }
-    //   }
-    // })
 
   }),
 })

@@ -3,8 +3,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useCourseupdatingMutation } from '../../services/courses';
 
 
-
-
 function EditCourse() {
   var { state } = useLocation();
   console.log(state);
@@ -43,16 +41,15 @@ function EditCourse() {
       technologies,
       videos,
     };
-    console.log('Updated Course Data:', updatedCourse);
 
     var data = await updateCourseFn(updatedCourse)
-    if(data){
-        console.log("data",data)
-        // navigate("/home")
+    console.log("data",data)
+    if(data.data.msg=="course updated"){
+        navigate("/home")
     }
     else
     {
-        console.log("errorrrdata",data)
+       alert("course is not updated retry......")
     }
   };
 

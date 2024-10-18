@@ -3,14 +3,13 @@ import { useGetAllUserCourseQuery } from '../../services/usercourses'
 
 function Purchasedcourses() {
     var {isLoading,data} = useGetAllUserCourseQuery()
-    console.log(data)
+
   return (
     <div className='m-3  p-3 border '>
       <h3>Purchasedcourses</h3>
        <div className='d-flex'>
         {
           (data)?.map((course)=>{
-            console.log("course",course)
             var data = JSON.parse(JSON.stringify(course))
             data.status.sort((a,b)=>{
               if(a.timestamp<b.timestamp){

@@ -6,18 +6,14 @@ import { useSelector } from "react-redux";
 function Allcourses(){
     var {isLoading,data} = useGetAllCoursesQuery();
     var navigate = useNavigate();
-    console.log("isLoading::",isLoading)
-    console.log("data::",data)
 
     const {loginStatus,role} = useSelector((state) => state.user); 
-    console.log(loginStatus,role)
 
     function coursdetails(course) {
         navigate("/coursedetails",{state:course})
     }
 
     var editcourse = function(course) {
-        //    console.log(course)
            navigate("/editcourse",{state:course})
     }
 

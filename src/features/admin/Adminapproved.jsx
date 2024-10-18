@@ -3,7 +3,6 @@ import { useGetAllAdminApprovedCoursesQuery } from '../../services/usercourses'
 
 function Adminapproved() {
   var {isLoading,data} = useGetAllAdminApprovedCoursesQuery()
-   !isLoading && console.log(data)
   return (
     <div className='m-3'>
      <h4 >Adminapproved courses</h4>

@@ -35,7 +35,6 @@ function Login() {
       }),
       onSubmit: values => {
         loginFn(values).then((res)=>{
-          console.log("ressss",res)
             if(res.data.msg=='loginsuccess'){
                 window.localStorage.setItem("token",res.data.token)
                 window.localStorage.setItem("role",res.data.role)
