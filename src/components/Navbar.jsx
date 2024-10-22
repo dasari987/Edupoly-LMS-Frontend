@@ -9,7 +9,6 @@ function Navbar() {
   var {loginStatus,role} =  useSelector(state=>state.user)
   var dispatch = useDispatch()
   var navigate = useNavigate();
-  console.log("useselector",loginStatus,role)
 
   function handlelogout() {
     dispatch(logout())

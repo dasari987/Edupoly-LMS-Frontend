@@ -9,7 +9,6 @@ function Adminapprovalpending() {
 
   async function approvecourse(user,course){
     var temp =JSON.parse(JSON.stringify(user))
-     console.log(temp,course)
      var te = temp.purchasedcoursestatus.map((cou,i)=>{
           if(cou.cid===course.cid){
             return {...cou,status: [...cou.status, { code: 'Approved', timestamp: Date.now() }]}
@@ -21,7 +20,6 @@ function Adminapprovalpending() {
      temp.purchasedcoursestatus = te
 
      var da = await updcourseFn({user:temp,course:course})
-     console.log("da",da)
      if(da.data.msg==='approved'){
           console.log("da",da)
           getdtaFn().then((res)=>{

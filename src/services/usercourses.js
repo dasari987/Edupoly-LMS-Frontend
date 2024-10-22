@@ -4,9 +4,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const usercoursesApi = createApi({
   reducerPath: 'usercoursesApi',
   baseQuery: fetchBaseQuery({ 
-    baseUrl: 'http://localhost:8090/',
+    baseUrl: 'https://lmsbackend-qx8v.onrender.com/',
     prepareHeaders:(headers)=>{
-      console.log("headers",headers)
       headers.set("authorization",window.localStorage.getItem('token'))
       return headers
     }
